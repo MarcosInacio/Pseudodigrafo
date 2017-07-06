@@ -23,70 +23,29 @@ import java.util.ArrayList;
 public class Pseudodigrafo 
 {
 	private int nos;
-	private ArrayList<Integer> vertice;
-	private ArrayList<String> nomeVertice;
-	private ArrayList<Integer> listaAdjacencia;
-	private ArrayList<Integer> lista;
+	private ArrayList<Vertice> v;
 	
-	//Para entrada pré-definida de nós
-	public Pseudodigrafo()
-	{
-		nos = 6;
-		vertice = new ArrayList<Integer>();
-		listaAdjacencia = new ArrayList<Integer>();
-		nomeVertice = new ArrayList<String>();
+	public Pseudodigrafo(int nos) {
+		this.nos = nos;
 	}
 	
-	//colocar a quantidade de nós em cada posição do arrayList
-	public void formarVertices()
+	public int getNos()
 	{
-		int contador = 0;
-		for(int i = 0; i < nos; i++)
-		{
-			char c = (char) (97 + i);
-			vertice.add(i);
-			nomeVertice.add(""+c); //gerando o nome do vertice a partir do caracter 'a' da tabela ascii
-			criarListaAdjacencia();
-		}
+		return nos;
 	}
 	
-	public void criarListaAdjacencia()
+	public void adicionarVertice(String nome, int indice)
 	{
-		for(int i = 0; i < vertice.size(); i++)
-		{
-			lista = new ArrayList<Integer>();
-			lista.add(vertice.get(i));
-		}
+		 
 	}
 	
-	public ArrayList<Integer> getLista()
-	{
-		return lista;
-	}
 	
-	public void adicionarAresta(Integer a, Integer b)
-	{
-		if(vertice.contains(a) && (vertice.contains(b)))
-		{
-			listaAdjacencia.add(b);
-			
-			
-		}
-	}
-	//Função para retornar o nome de um vertice dado
-	public String retornarNome(int no)
-	{
-		return nomeVertice.get(no);
-	}
+	
+	
+	
+	
 
-	@Override
-	public String toString() 
-	{
-		return "Vertice=" + vertice + ",\n"
-				+ "Quantidade de nós=" + nos + ",\n"
-				+ "Lista de Adjacencia=" + listaAdjacencia + ",\n"
-				+ "Nome do vertice=" + nomeVertice;
-	}
+
 	
 	
 }
